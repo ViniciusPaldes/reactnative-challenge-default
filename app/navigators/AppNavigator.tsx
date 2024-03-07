@@ -10,13 +10,14 @@ import {
 } from '@react-navigation/native-stack';
 import React from 'react';
 import {useColorScheme} from 'react-native';
-import {Welcome, Demo} from '../screens';
+import {Welcome, Movies, Detail} from '../screens';
 
 const navigationRef = createNavigationContainerRef<AppStackParamList>();
 
 export type AppStackParamList = {
   Welcome: undefined;
-  Demo: undefined;
+  Movies: undefined;
+  Detail: undefined;
   // 🔥 Your screens go here
 };
 
@@ -33,7 +34,8 @@ const AppStack = () => {
       }}
       initialRouteName="Welcome">
       <Stack.Screen name="Welcome" component={Welcome} />
-      <Stack.Screen name="Demo" component={Demo} />
+      <Stack.Screen name="Movies" component={Movies} />
+      <Stack.Screen name="Detail" component={Detail} />
       {/** 🔥 Your screens go here */}
     </Stack.Navigator>
   );

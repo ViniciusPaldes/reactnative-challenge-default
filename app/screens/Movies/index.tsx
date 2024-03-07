@@ -1,12 +1,13 @@
 import React from 'react';
-import {Button, useColorScheme, View} from 'react-native';
+import {useColorScheme, View} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {useSafeAreaInsetsStyle} from '../../utils/useSafeAreaInsetsStyle';
-import {WelcomeScreenProps} from './welcome.props';
-import {NavigationProp, useNavigation} from '@react-navigation/native';
+import { DetailButton } from './movies.styles';
+import { MoviesScreenProps } from './movies.props';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { AppStackParamList } from '../../navigators/AppNavigator';
 
-const Welcome: React.FC<WelcomeScreenProps> = () => {
+const Movies: React.FC<MoviesScreenProps> = () => {
   const navigation = useNavigation<NavigationProp<AppStackParamList>>();
   const isDarkMode = useColorScheme() === 'dark';
   const $containerInsets = useSafeAreaInsetsStyle(['top', 'bottom']);
@@ -16,14 +17,14 @@ const Welcome: React.FC<WelcomeScreenProps> = () => {
   };
 
   const navigate = () => {
-    navigation.navigate('Movies');
+    navigation.navigate('Detail');
   };
 
   return (
     <View style={[$containerInsets]}>
-      <Button title="Go to Movies" onPress={navigate} />
+      <DetailButton title="Go to Detail" onPress={navigate} />
     </View>
   );
 };
 
-export default Welcome;
+export default Movies;
