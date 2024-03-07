@@ -12,7 +12,7 @@ public
 # OSX
 #
 .DS_Store
-
+.env
 # Xcode
 #
 build/
